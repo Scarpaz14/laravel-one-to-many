@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="card">
-        <div class="card-header">
+    <div class="card-header">
             <h1>Lista Categorie:</h1>
         </div>
         <div class="card-body">
@@ -16,8 +16,6 @@
                     <th scope="col">#</th>
                     <th scope="col">Titolo</th>
                     <th scope="col">Slug</th>
-                    <th scope="col">Contenuto</th>
-                    <th scope="col">Stato</th>
                     <th scope="col">Azioni</th>
                   </tr>
                 </thead>
