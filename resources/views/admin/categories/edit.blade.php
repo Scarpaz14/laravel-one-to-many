@@ -12,8 +12,8 @@
                     @method('PUT')
                     <div class="form-group">
                         <label for="title">Nome</label>
-                        <input type="text" class="form-control @error('title') is-invalid @enderror" id="name" name="name" value="{{old('name', $category->title)}}">
-                        @error('title')
+                        <input type="text" class="form-control @error('title') is-invalid @enderror" id="name" name="name" value="{{old('name', $category->name)}}">
+                        @error('name')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
