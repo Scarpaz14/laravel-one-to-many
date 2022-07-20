@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -35,7 +37,20 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         // validazione
+         $request->validate([
+            'name' => 'required|string|max:100',
+        ]);
+        // prendo i dati dalla request e creo la categoria
+        $data = $request->all();
+        $newCategory = new Category();
+        $newCategory->fill($data);
+        // genera slag
+        $newCategory->slug = Str::of($newCategory->name)->slug('-');
+
+        $newCategory->save();
+        // redirect alla pagina di tutte le categorie
+        return redirect()->route('admin.categories.index');
     }
 
     /**
